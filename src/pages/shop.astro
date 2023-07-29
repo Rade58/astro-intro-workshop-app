@@ -1,0 +1,35 @@
+---
+import DefaultLayout from '../layouts/Default.astro';
+---
+
+<DefaultLayout>
+  <div class="shop">
+    <h1>Shop Sandwitch Kits</h1>
+
+    <noscript>
+      <p>
+        Javascript is required to purchase things from sndwch webstore. To order
+        by phone call <a href="tel:1248-434-5508">+12484345508</a>
+      </p>
+    </noscript>
+
+    <div class="products">
+      <p>TODO: list products</p>
+      <p>TODO: show cart</p>
+    </div>
+  </div>
+</DefaultLayout>
+
+<style>
+  .shop {
+    padding: 3rem 5%;
+  }
+
+  .products {
+    align-items: flex-start;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 260px;
+    position: relative;
+  }
+</style>
