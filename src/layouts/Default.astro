@@ -1,3 +1,11 @@
+---
+const navItems = [
+  { path: '/shop', label: 'Shop' },
+  { path: '/blog', label: 'Blog' },
+  { path: '/about', label: 'About' },
+];
+---
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,11 +29,16 @@
       </a>
 
       <!-- TODO add nav -->
+      <!-- there is no need for `key` prop like in react (there is no virtual dom) -->
+      <nav>
+        {navItems.map(({ label, path }) => <a href={path}>{label}</a>)}
+      </nav>
+      <!-- ---------------------- -->
     </header>
 
     <!-- TODO display content -->
     <slot />
-    <!--  -->
+    <!-- ---------------------- -->
     <footer>
       <p>
         <a href="https://jason.af/links">created by Jason Lengstorf</a>
