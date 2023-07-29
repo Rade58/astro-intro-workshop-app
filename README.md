@@ -1,3 +1,10 @@
+# Type definitions
+
+```
+pnpm add -D @types/markdown-it @types/react @types/react-dom @types/sanitize-html
+```
+
+
 # Astro Starter Kit: Basics
 
 ```
