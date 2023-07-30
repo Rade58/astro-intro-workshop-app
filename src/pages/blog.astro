@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import WrapperLayout from '../layouts/Wrapper.astro';
+
+const blogPost = await getCollection('blog');
+---
+
+<WrapperLayout>
+  <section class="blog-entries">
+    {
+      blogPost.map(({ slug, data: { title } }) => {
+        return (
+          <div class="post">
+            <h2>
+              <a href={`/blog/${slug}`}>{title}</a>
+            </h2>
+          </div>
+        );
+      })
+    }
+  </section>
+</WrapperLayout>
