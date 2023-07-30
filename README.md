@@ -38,7 +38,28 @@ ALSO IF WE DISABLE JAVASCRIPT, ALL CLIENT COMPONENTS WILL NOT BE ON THE PAGE WWH
 
 Read about [Content Collections](https://docs.astro.build/en/guides/content-collections/)
 
+
+# Some problems with types I encounter
+
+For example, module "astro:content" was undefined
+
+I was able to fix this by running
+
+```
+pnpm astro sync
+```
+
+***
+***
+***
+***
+***
+***
+***
+
 # Astro Starter Kit: Basics
+
+BOOTSTRAPED WITH
 
 ```
 pnpm create astro
