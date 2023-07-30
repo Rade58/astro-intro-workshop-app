@@ -8,7 +8,10 @@ import {
 import styles from './Cart.module.css';
 import { formatCurrency } from '../util/formatCurrency';
 
-// These are solid components
+// -------- These are solid components
+// --------                           --------
+// --------                           --------
+//
 function EmptyState() {
   return (
     <>

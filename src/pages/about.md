@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Content.astro
+layout: ../layouts/Wrapper.astro
 ---
 
 # About sndwch
