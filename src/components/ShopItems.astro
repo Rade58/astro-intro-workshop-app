@@ -7,6 +7,10 @@ const result = await fetch(
 
 if (!result.ok) {
   console.error(result);
+  // of course this is not complete error handling
+  // we would do error handling in hre to display something
+  // else if request fails
+  // in our case error will be thrown and our app will break
 }
 
 const shopItems: ShopItem[] = await result.json();
