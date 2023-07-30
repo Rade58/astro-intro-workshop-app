@@ -33,7 +33,7 @@ function CheckoutNotice() {
 //
 //
 export default function Cart() {
-  const [showNotice, setShowNotice] = createSignal();
+  const [showNotice, setShowNotice] = createSignal<boolean>(false);
 
   const $subtotal = useStore(subtotal);
   const $cart = useStore(cart);
@@ -64,6 +64,29 @@ export default function Cart() {
             return null;
           })}
         </ul>
+        <div class={styles.details}>
+          <p class={styles.subtotal}>
+            <span class={styles.label}>Subtotal:</span>
+            {formatCurrency($subtotal())}
+          </p>
+          <p class={styles.shipping}>
+            <span class={styles.label}>Shipping:</span>
+            <del>$10.00</del>
+            <ins>FREE</ins>
+          </p>
+          <p class={styles.total}>
+            <span class={styles.label}>Total:</span>
+            {formatCurrency($subtotal())}
+          </p>
+          <p class={styles.checkout}>
+            <button class="big-link" onClick={() => setShowNotice(true)}>
+              Check Out
+            </button>
+          </p>
+          <Show when={showNotice()}>
+            <CheckoutNotice />
+          </Show>
+        </div>
       </Show>
     </aside>
   );
