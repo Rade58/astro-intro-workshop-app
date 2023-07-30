@@ -34,6 +34,10 @@ SO `.tsx` FILES 'WILL BE' SOLID COMPONENTS BY DEFAULT (OFCOURSE WE WILL ALSO USE
 
 ALSO IF WE DISABLE JAVASCRIPT, ALL CLIENT COMPONENTS WILL NOT BE ON THE PAGE WWHICH IS PRETTY NEAT
 
+# Content Collections
+
+Read about [Content Collections](https://docs.astro.build/en/guides/content-collections/)
+
 # Astro Starter Kit: Basics
 
 ```
