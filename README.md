@@ -49,6 +49,8 @@ I was able to fix this by running
 pnpm astro sync
 ```
 
+https://docs.astro.build/en/reference/cli-reference/#astro-sync
+
 ***
 ***
 ***
