@@ -1,5 +1,6 @@
 ---
 import { formatCurrency } from '../util/formatCurrency';
+import AddToCart from './AddToCart';
 
 const result = await fetch(
   'https://astro-frontend-masters-api.netlify.app/api/products'
@@ -24,7 +25,11 @@ const shopItems: ShopItem[] = await result.json();
         <h2>{title}</h2>
         <p>{description}</p>
         <p class="price">{formatCurrency(price)}</p>
-        <p>TODO: add to cart button</p>
+
+        <AddToCart
+          client:only="react"
+          item={{ description, id, image, price, title }}
+        />
       </div>
     ))
   }
