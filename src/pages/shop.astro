@@ -1,6 +1,7 @@
 ---
 import DefaultLayout from '../layouts/Default.astro';
 import ShopItems from '../components/ShopItems.astro';
+import Cart from '../components/Cart';
 ---
 
 <DefaultLayout>
@@ -19,8 +20,15 @@ import ShopItems from '../components/ShopItems.astro';
        -->
       <ShopItems />
       <!-- ------------------ -->
-
-      <p>TODO: show cart</p>
+      <!-- <p>TODO: show cart</p> -->
+      <!-- because it is static html by default -->
+      <!-- we are rendering this like client componet -->
+      <!-- by ading client:only directive -->
+      <!-- and because we are using multiple frameworks
+      we must tell it what framework component is written in -->
+      <!-- only now it is hydrated, it is normal javascript component -->
+      <Cart client:only="solid-js" />
+      <!-- ------------------ -->
     </div>
   </div>
 </DefaultLayout>
