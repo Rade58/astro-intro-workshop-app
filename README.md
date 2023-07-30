@@ -4,8 +4,31 @@
 pnpm add -D @types/markdown-it @types/react @types/react-dom @types/sanitize-html
 ```
 
+# `react` and `solid` are added with astro cli
+
+```
+npx astro add react solid
+```
+
+after config changes, go back to tsconfig and make these changes 
+
+```js
+// <!-- for compiler options -->
+jsx: "preserve", // it was 'react-jsx'
+jsxImportSource: "solid-js" // it was 'react'
+```
+
+**BUT IT IS UP TO YOU** (iF YOU THINK YOUR APP WILL HAVE MORE REACT COMPONENTS THAN SOLID ONE, USE react AS jsxImportSource)
+
+OVERRIDING WILL BE DONE PER FILE BASIS
 
 # Astro Starter Kit: Basics
+
+```
+pnpm create astro
+```
+
+or
 
 ```
 npm create astro@latest -- --template basics
