@@ -11,4 +11,5 @@ export default defineConfig({
   // don't forget to set this up to valid url
   //
   site: '',
+  // check it on /rss.xml (we named endpoint like that inside pages folder)
 });
