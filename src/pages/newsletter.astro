@@ -23,6 +23,7 @@ if (Astro.request.method === 'POST') {
 
     // If we had some newsletter service, in here
     // we would talk to their API
+    message = `Subscribed as "${name}" with email "${email}".`;
   } catch (err) {
     console.error(err);
   }
@@ -31,7 +32,15 @@ if (Astro.request.method === 'POST') {
 
 <WrapperLayout>
   <h1 class="heading">Get the sndwch newsletter</h1>
-  <form method="post" class="newsletter visible">
+  <!-- THIS IS CONVINIENT FROM astro 
+  INSTEAD OF WRITING TERNARYS OR USING clsx
+  WE CAN  USE 'class:list'-->
+  <div class:list={{ success: true, visible: message }}>
+    {message}
+    <a href="/newsletter">Start over</a>
+  </div>
+  <!--  -->
+  <form method="post" class:list={{ newsletter: true, visible: !message }}>
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required />
 
