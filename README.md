@@ -55,9 +55,12 @@ https://docs.astro.build/en/reference/cli-reference/#astro-sync
 
 So by default astro is static site generator (all pages are statically pre-rendered)
 
+To be precise, we can set our app to be ssr or to be static-prerender (which is default), in those case if some page nedds to be prerendered or it needs to be ssr, we can opt in into hybrid rendering where enteire site has one type of rendering and some pages have enabled different type of rendering
+
 We ca make our site completely [server side rendered](https://docs.astro.build/en/guides/server-side-rendering/#enabling-ssr-in-your-project) by altering config
 
-But we can olso [configure individual routes](https://docs.astro.build/en/guides/server-side-rendering/#configuring-individual-routes) to opt out of pre-rendering
+But we can also [configure individual routes](https://docs.astro.build/en/guides/server-side-rendering/#configuring-individual-routes) to opt out of pre-rendering
+
 ***
 ***
 ***

@@ -1,0 +1,94 @@
+---
+import WrapperLayout from '../layouts/Wrapper.astro';
+
+export const prerender = false;
+
+// this is bogus nesletter submission (we don't want to have real newsletter for our educational app)
+// we are just going to assign values from the form
+// to a variable
+
+let message;
+
+// as you can notice, this is form submission that works without
+// javascript
+// we notice this in all moern frmework like:
+// nextjs and remis (thet are called 'server actions' in those)
+// also in svelte as I remember (maybe I'm wrong)
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData();
+    const name = data.get('name');
+    const email = data.get('email');
+
+    // If we had some newsletter service, in here
+    // we would talk to their API
+  } catch (err) {
+    console.error(err);
+  }
+}
+---
+
+<WrapperLayout>
+  <h1 class="heading">Get the sndwch newsletter</h1>
+  <form method="post" class="newsletter visible">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+
+    <button type="submit" class="big-link">Subscribe</button>
+  </form>
+</WrapperLayout>
+
+<style>
+  .heading {
+    text-align: center;
+  }
+  .newsletter,
+  .success {
+    background-color: var(--color-gray-100);
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.125rem;
+    display: none;
+    flex-direction: column;
+    margin: 1rem auto;
+    max-width: 400px;
+    padding: 1.5rem 2rem;
+  }
+
+  .newsletter.visible {
+    display: flex;
+  }
+
+  .newsletter label {
+    line-height: 1.1;
+  }
+
+  .newsletter label:not(:first-of-type) {
+    margin-block-start: 1rem;
+  }
+
+  .newsletter input {
+    border: 1px solid var(--color-gray-200);
+    border-radius: 0.125rem;
+    font-size: 1rem;
+    margin-block-start: 0.25rem;
+    padding: 0.25rem;
+  }
+
+  .newsletter button {
+    margin-block-start: 1rem;
+  }
+
+  .success {
+    background-color: hsl(100, 50%, 97%);
+    border-color: hsl(100, 50%, 60%);
+    padding-block: 0.5rem;
+  }
+
+  .success.visible {
+    display: block;
+  }
+</style>
