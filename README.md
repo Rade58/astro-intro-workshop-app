@@ -51,6 +51,13 @@ pnpm astro sync
 
 https://docs.astro.build/en/reference/cli-reference/#astro-sync
 
+# Hybrid rendering
+
+So by default astro is static site generator (all pages are statically pre-rendered)
+
+We ca make our site completely [server side rendered](https://docs.astro.build/en/guides/server-side-rendering/#enabling-ssr-in-your-project) by altering config
+
+But we can olso [configure individual routes](https://docs.astro.build/en/guides/server-side-rendering/#configuring-individual-routes) to opt out of pre-rendering
 ***
 ***
 ***
