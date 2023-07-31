@@ -61,6 +61,13 @@ We ca make our site completely [server side rendered](https://docs.astro.build/e
 
 But we can also [configure individual routes](https://docs.astro.build/en/guides/server-side-rendering/#configuring-individual-routes) to opt out of pre-rendering
 
+# Before deployment (this time on netlify)
+
+```
+pnpm astro add netlify
+```
+
+
 ***
 ***
 ***
